@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  font-size: 12px;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background-image: linear-gradient(#af67e9, #6565e7);
+}
+
+body .container {
+  display: -ms-grid;
+  display: grid;
+  background-color: white;
+  -ms-grid-columns: 1fr 1.2fr;
+      grid-template-columns: 1fr 1.2fr;
+  width: min(800px, 90%);
+  border-radius: 20px;
+  position: relative;
+}
+
+body .container .banner-container {
+  position: relative;
+  background-image: url("images/illustration-woman-online-desktop.svg"), url("images/bg-pattern-desktop.svg");
+  background-position: 75% 40%;
+  background-repeat: no-repeat;
+  background-size: 130%;
+}
+
+body .container .banner-container .mobile-bg {
+  display: none;
+}
+
+body .container .banner-container .mobile-pattern {
+  display: none;
+}
+
+body .container .banner-container .box-container {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -25%);
+          transform: translate(-50%, -25%);
+  width: 150px;
+  height: 150px;
+}
+
+body .container .banner-container .box-container .banner-box {
+  width: 100%;
+}
+
+body .container .contents {
+  padding: 3rem 6rem;
+}
+
+body .container .contents h2 {
+  letter-spacing: 1px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+body .container .contents hr {
+  border: none;
+  height: 2px;
+  background-color: #e7e7e9;
+  margin-block: 1.5rem;
+}
+
+body .container .contents .qa-container {
+  cursor: pointer;
+  position: relative;
+}
+
+body .container .contents .qa-container .question {
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: all 3s linear;
+  transition: all 3s linear;
+}
+
+body .container .contents .qa-container .question p {
+  color: #4a4b5e;
+  -webkit-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+}
+
+body .container .contents .qa-container .question p:hover {
+  color: #f47c57;
+  cursor: pointer;
+}
+
+body .container .contents .qa-container .question p.active {
+  font-weight: 700;
+  pointer-events: none;
+}
+
+body .container .contents .qa-container .question .arrow-btn {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+body .container .contents .qa-container .question .arrow-btn.active {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+body .container .contents .qa-container .question .arrow-btn img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+body .container .contents .qa-container .answer {
+  position: relative;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s linear;
+  transition: max-height 0.5s linear;
+}
+
+body .container .contents .qa-container .answer p {
+  color: #787887;
+}
+
+body .container .contents .qa-container .answer.active {
+  max-height: 100px;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 13px;
+  }
+  body {
+    display: block;
+  }
+  body .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    margin-top: 10rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .container .banner-container {
+    position: relative;
+    background-image: none;
+  }
+  body .container .banner-container .mobile-bg,
+  body .container .banner-container .mobile-pattern {
+    display: block;
+    width: 70%;
+    margin: auto;
+    right: 0;
+    left: 0;
+  }
+  body .container .banner-container .mobile-bg {
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%);
+  }
+  body .container .banner-container .mobile-pattern {
+    position: absolute;
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+    top: 0;
+  }
+  body .container .banner-container .box-container {
+    display: none;
+  }
+  body .container .contents {
+    padding: 2rem;
+    margin-top: 5rem;
+  }
+  body .container .contents h2 {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  body .container .contents hr {
+    margin-block: 1rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+//  Primary
+//  Text
+$primVeryDarkDB: hsl(238, 29%, 16%);
+$primSofRed: hsl(14, 88%, 65%);
+
+// Gradient
+// Background gradient:
+$bgSoftViolet: hsl(273, 75%, 66%);
+$bgSoftBlue: hsl(240, 73%, 65%);
+
+//  Neutral
+//  Text
+$neutTextVeryDarkGB: hsl(237, 12%, 33%);
+$neutTextDarkBG: hsl(240, 6%, 50%);
+
+//  Dividers
+$clrDivider: hsl(240, 5%, 91%);
+
+//  Body Copy
+$fs-12: 12px;
+$fs-13: 13px;
+$ff: "Kumbh Sans", sans-serif;
+
+:root {
+  font-size: $fs-12;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: $ff;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient($bgSoftViolet, $bgSoftBlue);
+  .container {
+    display: grid;
+    background-color: white;
+    grid-template-columns: 1fr 1.2fr;
+    width: #{"min(800px, 90%)"};
+    border-radius: 20px;
+    position: relative;
+
+    .banner-container {
+      position: relative;
+      background-image: url("images/illustration-woman-online-desktop.svg"),
+        url("images/bg-pattern-desktop.svg");
+      background-position: 75% 40%;
+      background-repeat: no-repeat;
+      background-size: 130%;
+      .mobile-bg {
+        display: none;
+      }
+      .mobile-pattern {
+        display: none;
+      }
+      .box-container {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -25%);
+        width: 150px;
+        height: 150px;
+
+        .banner-box {
+          width: 100%;
+        }
+      }
+    }
+    .contents {
+      padding: 3rem 6rem;
+      h2 {
+        letter-spacing: 1px;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      hr {
+        border: none;
+        height: 2px;
+        background-color: $clrDivider;
+        margin-block: 1.5rem;
+      }
+      .qa-container {
+        cursor: pointer;
+        position: relative;
+        .question {
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+          font-size: 1.1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          transition: all 3s linear;
+          p {
+            color: $neutTextVeryDarkGB;
+            transition: color 0.1s linear;
+            &:hover {
+              color: $primSofRed;
+              cursor: pointer;
+            }
+            &.active {
+              font-weight: 700;
+              pointer-events: none;
+            }
+          }
+
+          .arrow-btn {
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+            background-color: transparent;
+            border: none;
+            display: flex;
+            transition: all 0.5s linear;
+            &.active {
+              transform: rotate(-180deg);
+            }
+            img {
+              width: 100%;
+              display: block;
+              margin: auto;
+            }
+          }
+        }
+        .answer {
+          position: relative;
+          transition: all 0.25s linear;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s linear;
+          p {
+            color: $neutTextDarkBG;
+          }
+          &.active {
+            max-height: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: $fs-13;
+  }
+  body {
+    display: block;
+    .container {
+      display: flex;
+      margin: auto;
+      margin-top: 10rem;
+      flex-direction: column;
+      .banner-container {
+        position: relative;
+        background-image: none;
+        // url("images/bg-pattern-mobile.svg")
+        .mobile-bg,
+        .mobile-pattern {
+          display: block;
+          width: 70%;
+          margin: auto;
+          right: 0;
+          left: 0;
+        }
+        .mobile-bg {
+          position: absolute;
+          top: 0;
+          transform: translateY(-70%);
+        }
+        .mobile-pattern {
+          position: absolute;
+          transform: translateY(-20%);
+
+          top: 0;
+        }
+
+        .box-container {
+          display: none;
+        }
+      }
+      .contents {
+        padding: 2rem;
+        margin-top: 5rem;
+        h2 {
+          text-align: center;
+          font-size: 2.5rem;
+        }
+        hr {
+          margin-block: 1rem;
+        }
+      }
+    }
+  }
+}
